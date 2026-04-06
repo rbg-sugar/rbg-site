@@ -1,0 +1,285 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rich Brothers Group — Сахар-песок оптом</title>
+  <meta name="description" content="Оптовые поставки сахара-песка по Казахстану от ТОО Rich Brothers Group." />
+  <style>
+    :root{
+      --bg:#0f1115;
+      --bg2:#1a1f29;
+      --accent:#d9a441;
+      --accent-dark:#b8862f;
+      --text:#111827;
+      --muted:#6b7280;
+      --white:#ffffff;
+      --line:#e5e7eb;
+      --soft:#f7f7f8;
+      --card:#ffffff;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family: Inter, Arial, Helvetica, sans-serif;
+      color:var(--text);
+      background:#fff;
+      line-height:1.5;
+    }
+    a{text-decoration:none;color:inherit}
+    .container{width:min(1120px, calc(100% - 32px)); margin:0 auto}
+    .hero{
+      background: radial-gradient(circle at top right, rgba(255,255,255,.12), transparent 26%), linear-gradient(135deg, var(--bg), var(--bg2), #5a3a10);
+      color:var(--white);
+      padding:72px 0 88px;
+    }
+    .hero-grid, .two-col, .contact-grid{display:grid; gap:40px}
+    .hero-grid{grid-template-columns:1.2fr .9fr; align-items:center}
+    .badge{
+      display:inline-block;
+      border:1px solid rgba(255,255,255,.18);
+      color:rgba(255,255,255,.85);
+      border-radius:999px;
+      padding:8px 14px;
+      font-size:14px;
+      margin-bottom:18px;
+    }
+    h1{font-size:56px; line-height:1.05; margin:0 0 18px}
+    h1 span{display:block; color:#f4c76a}
+    .lead{font-size:19px; color:rgba(255,255,255,.82); max-width:640px}
+    .actions{display:flex; gap:14px; flex-wrap:wrap; margin-top:28px}
+    .btn{
+      display:inline-block; padding:14px 22px; border-radius:18px; font-weight:700;
+      transition:.18s ease;
+    }
+    .btn-primary{background:var(--accent); color:#111}
+    .btn-primary:hover{background:#e4b65b}
+    .btn-secondary{border:1px solid rgba(255,255,255,.2); color:#fff}
+    .btn-secondary:hover{background:rgba(255,255,255,.08)}
+    .hero-card{
+      border:1px solid rgba(255,255,255,.12);
+      background:rgba(255,255,255,.08);
+      backdrop-filter: blur(8px);
+      border-radius:28px;
+      padding:22px;
+      box-shadow:0 20px 40px rgba(0,0,0,.25);
+    }
+    .stats{display:grid; grid-template-columns:1fr 1fr; gap:14px}
+    .stat{
+      background:rgba(255,255,255,.09);
+      border-radius:20px;
+      padding:20px;
+    }
+    .stat strong{display:block; font-size:34px}
+    .stat span{font-size:14px; color:rgba(255,255,255,.72)}
+    .hero-note{
+      margin-top:14px; border:1px solid rgba(244,199,106,.18); background:rgba(217,164,65,.12);
+      border-radius:20px; padding:18px;
+    }
+    section{padding:72px 0}
+    .center{text-align:center}
+    h2{font-size:40px; line-height:1.15; margin:0 0 10px}
+    .sub{color:var(--muted); max-width:760px; margin:0 auto}
+    .cards3{display:grid; grid-template-columns:repeat(3,1fr); gap:22px; margin-top:42px}
+    .card{
+      border:1px solid var(--line);
+      border-radius:26px;
+      padding:28px;
+      background:var(--card);
+      box-shadow:0 6px 20px rgba(17,24,39,.04);
+    }
+    .card h3{margin:0 0 10px; font-size:22px}
+    .card p{margin:0; color:var(--muted)}
+    .band{background:var(--soft); border-top:1px solid var(--line); border-bottom:1px solid var(--line)}
+    .two-col{grid-template-columns:1fr 1fr}
+    .spec-list, .contact-list{display:grid; gap:14px; margin-top:28px}
+    .rowbox{
+      display:flex; justify-content:space-between; gap:12px; align-items:center;
+      border:1px solid var(--line); border-radius:18px; padding:16px 18px; background:#fff;
+    }
+    .rowbox .label{color:var(--muted)}
+    .chips{display:grid; grid-template-columns:1fr 1fr; gap:14px; margin-top:28px}
+    .chip{
+      border:1px solid var(--line); border-radius:18px; background:#fff; padding:16px 18px; font-weight:600;
+    }
+    .darkbox{
+      background:#111318; color:#fff; border-radius:34px; padding:34px; display:grid; grid-template-columns:1fr 1fr; gap:34px;
+    }
+    .dark-item{
+      border:1px solid rgba(255,255,255,.1); background:rgba(255,255,255,.04);
+      border-radius:18px; padding:16px 18px;
+    }
+    .contact-grid{grid-template-columns:1fr 1fr; align-items:start}
+    .formbox{
+      border:1px solid var(--line); border-radius:28px; padding:24px; background:#fff;
+      box-shadow:0 6px 20px rgba(17,24,39,.04);
+    }
+    .field, textarea{
+      width:100%; border:1px solid var(--line); border-radius:18px; padding:14px 16px;
+      font:inherit; margin-bottom:14px;
+    }
+    textarea{min-height:140px; resize:vertical}
+    .submit{
+      width:100%; border:0; cursor:pointer; padding:14px 18px; border-radius:18px;
+      background:#111318; color:#fff; font-weight:700;
+    }
+    .submit:hover{opacity:.92}
+    footer{
+      border-top:1px solid var(--line); color:var(--muted); padding:24px 0 34px;
+    }
+    .footer-row{
+      display:flex; gap:16px 28px; align-items:center; justify-content:space-between; flex-wrap:wrap;
+    }
+    .footer-links{display:flex; gap:12px 22px; flex-wrap:wrap}
+    @media (max-width: 900px){
+      .hero-grid, .two-col, .contact-grid, .darkbox, .cards3{grid-template-columns:1fr}
+      .chips{grid-template-columns:1fr}
+      h1{font-size:40px}
+      h2{font-size:32px}
+      .rowbox{flex-direction:column; align-items:flex-start}
+    }
+  </style>
+</head>
+<body>
+  <header class="hero">
+    <div class="container hero-grid">
+      <div>
+        <div class="badge">Оптовые поставки сахара-песка по Казахстану</div>
+        <h1>Сахар-песок оптом <span>с надежной поставкой</span></h1>
+        <p class="lead">
+          ТОО «Rich Brothers Group» предлагает поставку сахара-песка СТ2 для оптовых клиентов,
+          дистрибьюторов, производств, торговых сетей и переработчиков.
+        </p>
+        <div class="actions">
+          <a class="btn btn-primary" href="#contact">Связаться с нами</a>
+          <a class="btn btn-secondary" href="#advantages">Условия поставки</a>
+        </div>
+      </div>
+      <div class="hero-card">
+        <div class="stats">
+          <div class="stat"><strong>СТ2</strong><span>Категория сахара</span></div>
+          <div class="stat"><strong>5 / 10 / 50</strong><span>Фасовка, кг</span></div>
+          <div class="stat"><strong>Ж/Д</strong><span>Поставка вагонами</span></div>
+          <div class="stat"><strong>KZ</strong><span>Доставка по Казахстану</span></div>
+        </div>
+        <div class="hero-note">
+          <div style="font-size:14px;color:rgba(255,255,255,.76)">Подходит для:</div>
+          <div style="margin-top:8px;font-weight:600">
+            оптовых баз, кондитерских производств, напитков, мороженого, фасовщиков и торговых компаний.
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section id="advantages">
+    <div class="container">
+      <div class="center">
+        <h2>Почему выбирают нас</h2>
+        <p class="sub">
+          Работаем в B2B-сегменте и ориентируемся на стабильные поставки, понятные условия и оперативную коммуникацию.
+        </p>
+      </div>
+      <div class="cards3">
+        <div class="card">
+          <h3>Гибкие объемы</h3>
+          <p>Поставка возможна как разовыми партиями, так и поэтапно по согласованному графику.</p>
+        </div>
+        <div class="card">
+          <h3>Удобная логистика</h3>
+          <p>Организуем отгрузки с учетом станции назначения и условий клиента.</p>
+        </div>
+        <div class="card">
+          <h3>Оперативная связь</h3>
+          <p>Быстро предоставляем условия, согласовываем объемы и сопровождаем сделку.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band">
+    <div class="container two-col">
+      <div>
+        <h2>Характеристики продукции</h2>
+        <div class="spec-list">
+          <div class="rowbox"><span class="label">Наименование</span><strong>Сахар-песок</strong></div>
+          <div class="rowbox"><span class="label">Категория</span><strong>СТ2</strong></div>
+          <div class="rowbox"><span class="label">Стандарт</span><strong>ГОСТ 33222-2015</strong></div>
+          <div class="rowbox"><span class="label">Фасовка</span><strong>Полипропиленовые мешки 5 / 10 / 50 кг</strong></div>
+          <div class="rowbox"><span class="label">Формат поставки</span><strong>Авто и железнодорожные отгрузки</strong></div>
+        </div>
+      </div>
+      <div>
+        <h2>Кому подойдут поставки</h2>
+        <div class="chips">
+          <div class="chip">Оптовые компании</div>
+          <div class="chip">Торговые сети</div>
+          <div class="chip">Кондитерские производства</div>
+          <div class="chip">Производители напитков</div>
+          <div class="chip">Производители мороженого</div>
+          <div class="chip">Фасовщики и дистрибьюторы</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="darkbox">
+        <div>
+          <h2>Условия сотрудничества</h2>
+          <p style="color:rgba(255,255,255,.75); margin-top:14px">
+            Стоимость, объемы, график и станции поставки согласовываются индивидуально
+            в зависимости от потребности клиента и условий логистики.
+          </p>
+        </div>
+        <div style="display:grid; gap:14px">
+          <div class="dark-item">Индивидуальный расчет цены</div>
+          <div class="dark-item">Поставка партиями по согласованному графику</div>
+          <div class="dark-item">Подготовка коммерческих условий под запрос клиента</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="container contact-grid">
+      <div>
+        <h2>Связаться с нами</h2>
+        <p style="max-width:700px;color:var(--muted)">
+          Направьте запрос, и мы свяжемся с вами для уточнения объема, станции назначения
+          и коммерческих условий поставки.
+        </p>
+
+        <div class="contact-list">
+          <div class="rowbox"><span class="label">Компания</span><strong>ТОО «Rich Brothers Group»</strong></div>
+          <div class="rowbox"><span class="label">Директор</span><strong>Савелий: +7 702 536 55 65</strong></div>
+          <div class="rowbox"><span class="label">Менеджер по продажам</span><strong>+7 776 832 20 00</strong></div>
+          <div class="rowbox"><span class="label">Электронная почта</span><strong>rbgofficial@outlook.com</strong></div>
+        </div>
+      </div>
+
+      <div class="formbox">
+        <input class="field" placeholder="Ваше имя / компания" />
+        <input class="field" placeholder="Телефон или WhatsApp" />
+        <input class="field" placeholder="Email" />
+        <textarea placeholder="Укажите интересующий объем, фасовку и станцию поставки"></textarea>
+        <button class="submit" onclick="alert('Форма-заглушка: я могу позже подключить WhatsApp, Telegram или отправку на почту.')">Отправить заявку</button>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container footer-row">
+      <div>© ТОО «Rich Brothers Group»</div>
+      <div class="footer-links">
+        <span>Оптовые поставки сахара-песка по Казахстану</span>
+        <span>rbgofficial@outlook.com</span>
+        <span>+7 702 536 55 65</span>
+        <span>+7 776 832 20 00</span>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
